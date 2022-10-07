@@ -7,6 +7,7 @@ const especiales = ['A', 'J', 'Q','K'];
 let puntosJugador = 0,
     puntosComputadora = 0;
 
+const divCartasJugador = document.querySelector('#jugador-cartas')
 const persona = document.querySelector('small');
 const btnPedir = document.querySelector('#btnPedir');
 const btnDetener = document.querySelector('#btnDetener');
@@ -49,10 +50,21 @@ const valorCarta = (carta) => {
             : valor * 1;
 }
 
-//evenetos
- 
+//evento para pedir carta y mostrar el resultado
 btnPedir.addEventListener('click', () => {
     const carta = pedirCarta();
     puntosJugador = puntosJugador + valorCarta(carta);
     persona.innerHTML = puntosJugador;
+
+    const imagen = document.createElement('img');
+    imagen.src = `assets/img/${carta}.png`;
+    imagen.classList.add('carta');
+    divCartasJugador.append(imagen);
+    if( puntosJugador > 21){
+        alert('Lo siento mucho, perdiste.')
+        btnPedir.disabled = true;
+    }else if (puntosJugador === 21){
+        alert('Llegaste a 21 puntos, genial!')
+    }
+
 });
