@@ -4,7 +4,10 @@ let deck = [];
 const tipos = ['C', 'D', 'H','5'];
 const especiales = ['A', 'J', 'Q','K'];
 
+let puntosJugador = 0,
+    puntosComputadora = 0;
 
+const persona = document.querySelector('small');
 const btnPedir = document.querySelector('#btnPedir');
 const btnDetener = document.querySelector('#btnDetener');
 const btnNuevo = document.querySelector('#btnNuevo');
@@ -34,7 +37,7 @@ const pedirCarta = () => {
     if(deck.length === 0){
         throw 'No hay cartas en el deck';
     }
-    const carta = deck.pop;
+    const carta = deck.pop();
     return carta;
 }
 
@@ -49,8 +52,7 @@ const valorCarta = (carta) => {
 //evenetos
  
 btnPedir.addEventListener('click', () => {
-
     const carta = pedirCarta();
-    console.log(carta);
-
-})
+    puntosJugador = puntosJugador + valorCarta(carta);
+    persona.innerHTML = puntosJugador;
+});
