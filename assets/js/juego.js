@@ -65,6 +65,18 @@ const turnoComputadora = (puntosMinimos) => {
             break;
         }
     }while((puntosComputadora < puntosMinimos) && (puntosMinimos <= 21));
+
+    setTimeout(() => {
+        if(puntosComputadora === puntosMinimos){
+            alert('Nadie gana');
+        }else if(puntosMinimos > 21 ){
+            alert('Computadora gana');
+        }else if (puntosComputadora > 21){
+            alert('Jugador gana');
+        }else{
+            alert('Computadora gana!');
+        }
+    }, 100);
 }
 
 //evento para pedir carta y mostrar el resultado
@@ -87,6 +99,11 @@ btnPedir.addEventListener('click', () => {
     }
 });
 btnDetener.addEventListener('click', () => {
+        btnDetener.disabled = true;
+        btnPedir.disabled = true;
+        turnoComputadora( puntosJugador);
+});
+btnNuevo.addEventListener('click', () => {
         btnDetener.disabled = true;
         btnPedir.disabled = true;
         turnoComputadora( puntosJugador);
