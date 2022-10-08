@@ -58,7 +58,7 @@ const turnoComputadora = (puntosMinimos) => {
         puntosComputadora = puntosComputadora + valorCarta(carta);
         persona[1].innerText = puntosComputadora;
         const imagen = document.createElement('img');
-        imagen.src = `assets/img/${carta}.png`;
+        imagen.src = `assets/cartas/${carta}.png`;
         imagen.classList.add('carta');
         divCartasComputadora.append(imagen);
         if(puntosMinimos > 21){
@@ -85,7 +85,7 @@ btnPedir.addEventListener('click', () => {
     puntosJugador = puntosJugador + valorCarta(carta);
     persona[0].innerText = puntosJugador;
     const imagen = document.createElement('img');
-    imagen.src = `assets/img/${carta}.png`;
+    imagen.src = `assets/cartas/${carta}.png`;
     imagen.classList.add('carta');
     divCartasJugador.append(imagen);
     if( puntosJugador > 21){
@@ -109,8 +109,8 @@ btnNuevo.addEventListener('click', () => {
         puntosJugador = 0;
         puntosComputadora = 0;
 
-        persona[0] = 0;
-        persona[1] = 0;
+        persona[0] .innerHTML= 0;
+        persona[1].innerHTML = 0;
 
         divCartasJugador.innerHTML = '';
         divCartasComputadora.innerHTML = '';
