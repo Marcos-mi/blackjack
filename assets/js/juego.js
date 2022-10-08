@@ -95,7 +95,6 @@ btnPedir.addEventListener('click', () => {
         turnoComputadora( puntosJugador);
     }else if (puntosJugador === 21){
         alert('Llegaste a 21 puntos, genial!')
-        btnDetener.disabled = true;
     }
 });
 btnDetener.addEventListener('click', () => {
@@ -104,8 +103,21 @@ btnDetener.addEventListener('click', () => {
         turnoComputadora( puntosJugador);
 });
 btnNuevo.addEventListener('click', () => {
-        btnDetener.disabled = true;
-        btnPedir.disabled = true;
-        turnoComputadora( puntosJugador);
+        deck = [];
+        deck = crearDeck();
+
+        puntosJugador = 0;
+        puntosComputadora = 0;
+
+        persona[0] = 0;
+        persona[1] = 0;
+
+        divCartasJugador.innerHTML = '';
+        divCartasComputadora.innerHTML = '';
+
+        btnDetener.disabled = false;
+        btnPedir.disabled = false;
+       
+        
 });
 
