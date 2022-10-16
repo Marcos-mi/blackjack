@@ -10,16 +10,15 @@
 </head>
 <body class="">
     <header class="titulo">
-        Blackjack
+        <h1>Blackjack</h1>
     </header>
-    <main class="container">
-        <div class="row mt-2">
-            <div class="col-12 form-group mx-5 text-center">
-                <button id="btnNuevo" class="btn btn-danger">Nuevo Juego</button>
+    <main class="container-fluid">
+        
+            <div class="col-sm-12 col-12 mt-3 text-center">
+                <button id="btnNuevo" class="btn btn-danger">Iniciar nuevo Juego</button>
                 <button id="btnPedir" class="btn btn-warning">Pedir Carta</button>
                 <button id="btnDetener" class="btn btn-primary">Detener</button>
-            </div>
-        </div>  
+            </div>  
 
         <div class="row">
                 <div class="col-12 mt-5">
@@ -39,7 +38,7 @@
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-umd-min.js"></script>
-    <script src="assets/js/juego.js"></script>
+    <script src="assets/js/juego-min.js"></script>
     <script>
         document.querySelector('#btnNuevo').addEventListener('click',() =>{
             miModulo.nuevoJuego();
